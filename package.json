@@ -46,7 +46,9 @@
     "node": ">=10"
   },
   "dependencies": {
-    "commander": "^8.3.0"
+    "@types/sharp": "^0.29.5",
+    "commander": "^8.3.0",
+    "sharp": "^0.29.3"
   },
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
