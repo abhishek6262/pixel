@@ -10,8 +10,7 @@ const program = new Command();
 
 program
     .version("1.0.0")
-    .description("The image manipulation library.")
-    .option("-r, --recursive <bool>", "Recursively process the files in subdirectories", true);
+    .description("The image manipulation library.");
 
 program
     .command("convert")
