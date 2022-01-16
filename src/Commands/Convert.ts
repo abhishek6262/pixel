@@ -12,6 +12,10 @@ let rootSourcePath: string;
 let rootDestinationPath: string;
 
 export async function convert(sourcePath: string, destinationPath: string, options: Options) {
+    const quality = parseInt(options.quality.toString());
+
+    if (quality < 1 || quality > 100) throw new Error("The quality must be between 1 and 100.");
+
     // We need to find the relative path of the sub directories from the
     // root directory of the source in order to recreate the sub directories
     // at the destination directory.
@@ -31,9 +35,6 @@ export async function convert(sourcePath: string, destinationPath: string, optio
         );
         return;
     }
-
-    const quality = parseInt(options.quality.toString());
-    if (quality < 1 || quality > 100) throw new Error("The quality must be between 1 and 100.");
 
     const { flatten, type } = options;
 
