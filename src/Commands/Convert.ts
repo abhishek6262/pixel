@@ -32,9 +32,10 @@ export async function convert(sourcePath: string, destinationPath: string, optio
         return;
     }
 
-    const { flatten, type, quality } = options;
+    const quality = parseInt(options.quality.toString());
+    if (quality < 1 || quality > 100) throw new Error("The quality must be between 1 and 100.");
 
-    if (quality < 0 || quality > 100) throw new Error("The quality must be between 0 and 100.");
+    const { flatten, type } = options;
 
     const fileDestination = flatten ? rootDestinationPath : destinationPath;
     let fileName = [parse(sourcePath).name, type].join(".");

@@ -16,13 +16,13 @@ program
     .command("convert")
     .description("Convert the format of the file or files to the desired format")
     .argument("<source>", "The source file or directory")
-    .argument("[destination]", "The path at which file or files should be exported", DEFAULT_WORKING_DIRECTORY)
+    .argument("[destination]", "The path at which file or files should be exported")
     .option("-f, --flatten <boolean>", "Brings all the converted files on the root", DEFAULT_FLATTEN)
     .option("-t, --type <type>", "The type of the file to be exported into", DEFAULT_CONVERTED_FILE_TYPE)
     .option("-q, --quality <number>", "The quality at which the file should be exported", DEFAULT_QUALITY as unknown as string)
     .action((source, destination, options) => convert(
         source,
-        resolve(destination, "Converted"),
+        destination ? destination : resolve(DEFAULT_WORKING_DIRECTORY, "Converted"),
         { ...program.opts(), ...options }
     ));
 
