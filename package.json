@@ -5,9 +5,26 @@
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
-  "repository": "https://github.com/YOUR_GITHUB_USER_NAME/pixel",
+  "repository": "https://github.com/abhishek6262/pixel",
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "pixel",
+    "jpeg",
+    "png",
+    "webp",
+    "avif",
+    "tiff",
+    "gif",
+    "svg",
+    "jp2",
+    "dzi",
+    "image",
+    "resize",
+    "thumbnail",
+    "embed",
+    "libvips",
+    "vips"
+  ],
   "preferGlobal": true,
   "bin": {
     "pixel": "build/main/index.js"
